@@ -7,6 +7,15 @@ public class Master {
     private String name;
     private Integer age;
     
+    public Master() {
+        
+    }
+    
+    public Master(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+    
     public String getName() {
         return name;
     }
@@ -23,7 +32,12 @@ public class Master {
     public void attack() {
         if (StringUtils.isEmpty(this.name))
             this.name = "default";
-        System.out.println("Master" + this.name + "attack !");
+        System.out.println("Master" + this.name + "attacks !");
     }
     
+    public void spell(String spell) {
+        if (StringUtils.isEmpty(this.name))
+            this.name = "default";
+        System.out.println("Master" + this.name + "spells :" + spell);
+    }
 }

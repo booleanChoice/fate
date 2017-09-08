@@ -10,6 +10,18 @@ public abstract class Servent {
     protected Double mana;
     protected List<NoblePhantasm> nps;
     
+    protected Servent() {
+        this.health = 100.00;
+        this.mana = 100.00;
+    }
+    
+    protected Servent(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+        this.health = 100.00;
+        this.mana = 100.00;
+    }
+    
     public String getName() {
         return name;
     }
