@@ -9,6 +9,7 @@ public abstract class Servent {
     protected Double health;
     protected Double mana;
     protected List<NoblePhantasm> nps;
+    protected String description;
     
     protected Servent() {
         this.health = 100.00;
@@ -18,6 +19,14 @@ public abstract class Servent {
     protected Servent(String name, Integer age) {
         this.name = name;
         this.age = age;
+        this.health = 100.00;
+        this.mana = 100.00;
+    }
+    
+    protected Servent(String name, Integer age, String description) {
+        this.name = name;
+        this.age = age;
+        this.description = description;
         this.health = 100.00;
         this.mana = 100.00;
     }
@@ -60,6 +69,14 @@ public abstract class Servent {
 
     public void setNps(List<NoblePhantasm> nps) {
         this.nps = nps;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     protected abstract void attack();
