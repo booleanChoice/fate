@@ -1,19 +1,30 @@
 package com.example.fate.entry.master;
 
+import java.time.LocalDate;
+
 import org.springframework.util.StringUtils;
 
 public class Master {
     
     private String name;
-    private Integer age;
+    private String email;
+    private LocalDate birthDate;
+    /**
+     * for summon
+     */
+    private String medium;
     
     public Master() {
         
     }
     
-    public Master(String name, Integer age) {
+    public Master(String name) {
         this.name = name;
-        this.age = age;
+    }
+    
+    public Master(String name, LocalDate birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
     }
     
     public String getName() {
@@ -22,11 +33,29 @@ public class Master {
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getAge() {
-        return age;
+    
+    public String getEmail() {
+        return email;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+    
+    public String getMedium() {
+        return medium;
+    }
+
+    public void setMedium(String medium) {
+        this.medium = medium;
     }
     
     public void attack() {
