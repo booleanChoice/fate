@@ -1,5 +1,8 @@
-package com.example.fate.entry.servent;
+package com.example.fate.dto.servent;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Lancer extends Servent {
 
     @Override

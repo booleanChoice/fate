@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+            xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Default title </title>
+
+    <link href="/webjars/materializecss/0.100.2/css/materialize.css" type="text/css"
+    rel="stylesheet" media="screen,projection" />
+    <script src="/webjars/vue/2.4.2/vue.js"></script>
+	<script src="/webjars/jquery/3.2.1/jquery.js"></script>
+	<script src="/webjars/materializecss/0.100.2/js/materialize.js"></script>
+	<script src="/artery/arteryfirstclient.js"></script>
+</head>
+<body>
+    <div id="arteryScope">
+        <artery-button></artery-button>
+    </div>
+<script type="text/javascript">
+    
+    Vue.component('artery-button', {
+    	template: '<div><button v-on:click="arteryClientClick">我是ArteryButton组件</button></div>',
+    	methods: {
+    		arteryClientClick: function() {
+    			test();
+    		}
+    	}
+    });
+    new Vue({
+    	el: '#arteryScope',
+    	data: {
+    		data: 'test'
+    	}
+    });
+</script>
+</body>
+</html>

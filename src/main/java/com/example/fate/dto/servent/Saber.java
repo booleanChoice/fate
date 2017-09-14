@@ -1,5 +1,9 @@
-package com.example.fate.entry.servent;
+package com.example.fate.dto.servent;
 
+import org.springframework.stereotype.Component;
+
+//@Component("arthur")
+@Component
 public class Saber extends Servent {
     
     public Saber() {

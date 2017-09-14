@@ -1,4 +1,4 @@
-package com.example.fate.entry.servent;
+package com.example.fate.dto.servent;
 
 public class NoblePhantasm {
     enum Level {

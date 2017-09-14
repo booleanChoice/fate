@@ -1,17 +1,25 @@
-package com.example.fate.entry.master;
+package com.example.fate.dto.master;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.util.StringUtils;
 
 public class Master {
     
+    @Size(min = 2)
     private String name;
+    @Email
+    @NotEmpty
     private String email;
     private LocalDate birthDate;
     /**
      * for summon
      */
+    @NotEmpty
     private String medium;
     
     public Master() {

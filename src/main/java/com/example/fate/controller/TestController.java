@@ -7,13 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.fate.entry.master.Master;
-import com.example.fate.entry.servent.Servent;
+import com.example.fate.dto.master.Master;
+import com.example.fate.dto.servent.Servent;
 import com.example.fate.service.TestService;
 
 @Controller
@@ -40,7 +41,17 @@ public class TestController {
     }
     
     @RequestMapping("/result")
-    public String firstMethod(@RequestParam(defaultValue = "Fate")String search, 
+    public String result(@RequestParam(defaultValue = "Fate")String search, 
+            Model modle) {
+        Master master = new Master("Shirou");
+        List<Servent> servents = service.summonServents(master);
+        modle.addAttribute("search", search);
+        modle.addAttribute("servents", servents);
+        return "testPage";
+    }
+    
+    @RequestMapping("/result/{search}")
+    public String result2(@PathVariable String search, 
             Model modle) {
         Master master = new Master("Shirou");
         List<Servent> servents = service.summonServents(master);

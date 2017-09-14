@@ -11,24 +11,33 @@
     <!-- thymeleaf可以把表单绑定到DTO上,Artery可以利用这点提交表单 th:object th:field -->
     <!-- @{}语法会为资源构建完整路径 -->
     <form th:action="@{/profile}" th:object="${master}" method="post" class="col m8 sl2 offset-m2">
+      <!-- <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+        <li th:each="err : ${#fields.errors('*')}" th:text="${err}">
+          Input is incorrect
+        </li>
+      </ul> -->
       <div class="row">
         <div class="input-field col s6">
-          <input th:field="${master.name}" id="name" type="text"/>
+          <input th:field="${master.name}" id="name" type="text" th:errorclass="invalid"/>
           <label for="name">Name</label>
+          <li th:errors="*{name}" class="orange-text">Error</li>
         </div>
         <div class="input-field col s6">
-          <input th:field="${master.email}" id="email" type="text"/>
+          <input th:field="${master.email}" id="email" type="text" th:errorclass="invalid"/>
           <label for="email">Email</label>
+          <li th:errors="*{email}" class="orange-text">Error</li>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input th:field="${master.birthDate}" id="birthDate" type="text"/>
+          <input th:field="${master.birthDate}" id="birthDate" type="text" th:placeholder="${dateFormat}" th:errorclass="invalid"/>
           <label for="birthDate">Birth Date</label>
+          <li th:errors="*{birthDate}" class="orange-text">Error</li>
         </div>
         <div class="input-field col s6">
-          <input th:field="${master.medium}" id="medium" type="text"/>
+          <input th:field="${master.medium}" id="medium" type="text"  th:errorclass="invalid"/>
           <label for="medium">Medium</label>
+          <li th:errors="*{medium}" class="orange-text">Error</li>
         </div>
       </div>
       <div class="row s12">

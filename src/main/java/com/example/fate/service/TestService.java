@@ -5,10 +5,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.fate.entry.master.Master;
-import com.example.fate.entry.servent.Archer;
-import com.example.fate.entry.servent.Saber;
-import com.example.fate.entry.servent.Servent;
+import com.example.fate.dto.master.Master;
+import com.example.fate.dto.servent.Archer;
+import com.example.fate.dto.servent.Saber;
+import com.example.fate.dto.servent.Servent;
 
 @Service
 public class TestService {
