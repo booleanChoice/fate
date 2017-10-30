@@ -1,7 +1,5 @@
 package com.example.fate.config;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -10,8 +8,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
-
-import com.example.fate.formatter.USLocalDateFormatter;
 
 @Configuration
 public class ArteryWebConfiguration extends WebMvcConfigurerAdapter {
@@ -24,7 +20,7 @@ public class ArteryWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addFormatterForFieldType(LocalDate.class, new USLocalDateFormatter());
+//        registry.addFormatterForFieldType(LocalDate.class, new USLocalDateFormatter());
     }
     
     /**
@@ -42,7 +38,7 @@ public class ArteryWebConfiguration extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor);
-        registry.addInterceptor(arteryInterceptor);
+//        registry.addInterceptor(localeChangeInterceptor);
+//        registry.addInterceptor(arteryInterceptor);
     }
 }
